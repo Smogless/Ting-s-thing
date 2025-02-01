@@ -25,19 +25,27 @@ public class Subject {
             "Danielle", "Wayne", "Marilyn", "Randy", "Natalie", "Mason", "Beverly",
             "Vincent", "Diana", "Liam", "Brittany", "Roy", "Theresa", "Bobby", "Kayla",
             "Caleb", "Alexis", "Bradley", "Doris", "Russell", "Lori", "Lucas", "Tiffany"};
-    String[] contactList;
+    String[] contactList; //each person's emergency contact list
     public Subject(int a, int  c) {
         age = a;
         contactListSize = c;
         contactList = new String[contactListSize];
         addContacts();
     }
+    public boolean isInArray(String value) {
+        for (int i = 0; i < contactListSize; i++) {
+            if (contactList[i].equals(value))
+                return false;
+        }
+        return true;
+    }
     public void addContacts() {
         Random random = new Random();
-        int[] contactIndices = new int[contactListSize];
+        contactList = new String[contactListSize];
+       // int[] contactIndices = new int[contactListSize];
         for (int i = 0; i < contactListSize; i++) {
-            int index;
-            while ()
+            int index = random.nextInt(200);
+            while (isInArray(names[index]))
                 index = random.nextInt(200);
 
         }
