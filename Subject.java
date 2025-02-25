@@ -2,6 +2,7 @@ import java.util.Random;
 public class Subject {
     int age;
     int contactListSize;
+    String name;
     String[] names = {"James", "Mary", "Michael", "Patricia", "Robert", "Jennifer", "John", "Linda", "David", "Elizabeth",
             "William", "Barbara", "Richard", "Susan", "Joseph", "Jessica", "Thomas", "Karen", "Christopher",
             "Sarah", "Charles", "Lisa", "Daniel", "Nancy", "Matthew", "Sandra", "Anthony", "Betty", "Mark",
@@ -26,7 +27,8 @@ public class Subject {
             "Vincent", "Diana", "Liam", "Brittany", "Roy", "Theresa", "Bobby", "Kayla",
             "Caleb", "Alexis", "Bradley", "Doris", "Russell", "Lori", "Lucas", "Tiffany"};
     String[] contactList; //each person's emergency contact list
-    public Subject(int a, int  c) {
+    public Subject(String n, int a, int  c) {
+        name = n;
         age = a;
         contactListSize = c;
         contactList = new String[contactListSize];
@@ -47,9 +49,8 @@ public class Subject {
             int index = random.nextInt(200);
             while (isInArray(names[index]))
                 index = random.nextInt(200);
-
+            contactList[i] = names[index];
         }
-
-
     }
+
 }
