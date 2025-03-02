@@ -17,21 +17,21 @@ public class GenerateSubjects {
         subjectNumber = sNum;
         subjects = new Subject[sNum];
         for (int i = 0; i < subjectNumber; i++) {
-            int age = 21 + random.nextInt(79);
-            int contactListSize = 10 + random.nextInt(10);
+            int age = Constants.logicConstants.minimumAge + random.nextInt(Constants.logicConstants.ageVariance);
+            int contactListSize = Constants.logicConstants.minimumContactListSize + random.nextInt(Constants.logicConstants.contactListVariance);
             int nameIndex = random.nextInt(100);
-            while (isInArray(subjectNames[nameIndex]))
+            while (isInArray(subjectNames[nameIndex], i))
                 nameIndex = random.nextInt(100);
             Subject s = new Subject(subjectNames[nameIndex], age, contactListSize);
             subjects[i] = s;
         }
     }
-    public boolean isInArray(String value) {
-        for (int i = 0; i < subjectNumber; i++) {
-            if (subjects[i].equals(value))
-                return false;
+    public boolean isInArray(String value, int index) {
+        for (int i = 0; i < index; i++) {
+            if (subjects[i].name.equals(value))
+                return true;
         }
-        return true;
+        return false;
     }
     public Subject[] getSubjects() {
         return subjects;

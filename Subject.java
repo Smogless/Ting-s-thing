@@ -34,12 +34,12 @@ public class Subject {
         contactList = new String[contactListSize];
         addContacts();
     }
-    public boolean isInArray(String value) {
-        for (int i = 0; i < contactListSize; i++) {
+    public boolean isInArray(String value, int index) {
+        for (int i = 0; i < index; i++) {
             if (contactList[i].equals(value))
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
     public void addContacts() {
         Random random = new Random();
@@ -47,10 +47,14 @@ public class Subject {
        // int[] contactIndices = new int[contactListSize];
         for (int i = 0; i < contactListSize; i++) {
             int index = random.nextInt(200);
-            while (isInArray(names[index]))
+            while (isInArray(names[index], i))
                 index = random.nextInt(200);
             contactList[i] = names[index];
         }
     }
-
+    public void messageEmergencyContacts() {
+        for (String s : contactList) {
+            System.out.println("Calling " + s + "...");
+        }
+    }
 }
