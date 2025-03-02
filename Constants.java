@@ -9,7 +9,7 @@ public class Constants {
         static double legalBACLimit = 0.08;
         static int minimumContactListSize = 10;
         static int contactListVariance = 10;
-        static int maximumBAC = 41; //0.x% where x = maximumBAC
+        static int maximumBAC = 20; //0.x% where x = maximumBAC
         static int subjectCount = 20;
         static int minimumAge = 21;
         static int ageVariance = 79;

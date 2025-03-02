@@ -27,10 +27,10 @@ public class Simulation {
 
                 if (isDrinking) {
                     //GENERATE Blood Alcohol Content (BAC)
-                    double BAC = random.nextInt(Constants.logicConstants.maximumBAC) / 10;
+                    double BAC = random.nextInt(Constants.logicConstants.maximumBAC) / 100.0;
                     if (BAC >= Constants.logicConstants.legalBACLimit) {
                         System.out.println();
-                        System.out.println(Constants.colorConstants.RED + sub.name + "'s BAC is above the legal limit! CALLING EMERGENCY CONTACTS" + Constants.colorConstants.RESET);
+                        System.out.println(Constants.colorConstants.RED + sub.name + "'s BAC of " + Constants.colorConstants.BLUE + BAC  + "%" + Constants.colorConstants.RED + " is above the legal limit! CALLING EMERGENCY CONTACTS" + Constants.colorConstants.RESET);
                         sub.messageEmergencyContacts();
                     }
                 }
