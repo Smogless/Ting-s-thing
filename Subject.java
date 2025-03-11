@@ -26,6 +26,15 @@ public class Subject {
             "Danielle", "Wayne", "Marilyn", "Randy", "Natalie", "Mason", "Beverly",
             "Vincent", "Diana", "Liam", "Brittany", "Roy", "Theresa", "Bobby", "Kayla",
             "Caleb", "Alexis", "Bradley", "Doris", "Russell", "Lori", "Lucas", "Tiffany"};
+    String[] tips = {"Drink more water!", "Eat a light snack.", "Rest in a safe place.", "Avoid caffeine.",
+            "Stop drinking immediately.", "Take deep breaths.", "Sip electrolyte drinks.", "Lie down if dizzy.",
+            "Stay with a friend.", "Don’t drive!", "Monitor your symptoms.", "Avoid cold showers.",
+            "Drink broth or soup.", "Stretch gently.", "Take small sips of water.", "Avoid sugary drinks.",
+            "Keep the room cool.", "Use a damp towel on your forehead.", "Don’t take acetaminophen.",
+            "Try bland foods like toast.", "Sit up to prevent choking.", "Stay away from screens.",
+            "Avoid smoking.", "Don’t mix with medication.", "Listen to calming music.",
+            "If severe, seek medical help!", "Get fresh air.", "Hydrate with coconut water.", "Avoid greasy foods.",
+            "Give your body time to recover."};
     String[] contactList; //each person's emergency contact list
     public Subject(String n, int a, int  c) {
         name = n;
@@ -56,5 +65,10 @@ public class Subject {
         for (String s : contactList) {
             System.out.println("Calling " + s + "...");
         }
+    }
+    public void printHelpfulTips() {
+        Random random = new Random();
+        int index =random.nextInt(29);
+        System.out.println(Constants.colorConstants.BLUE + "HELPFUL TIP: " + tips[index] + Constants.colorConstants.RESET);
     }
 }

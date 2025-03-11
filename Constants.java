@@ -7,6 +7,7 @@ public class Constants {
     }
     public static class logicConstants {
         static double legalBACLimit = 0.08;
+        static double extremelyHighBAC = 0.12;
         static int minimumContactListSize = 10;
         static int contactListVariance = 10;
         static int maximumBAC = 20; //0.x% where x = maximumBAC
