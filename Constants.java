@@ -4,6 +4,7 @@ public class Constants {
         static String RED = "\u001B[31m";
         static String BLUE = "\033[1;34m";
         static String GREEN = "\033[0;32m";
+        static String BRIGHT_YELLOW = "\u001B[33;1m";
     }
     public static class logicConstants {
         static double legalBACLimit = 0.08;

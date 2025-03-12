@@ -3,6 +3,7 @@ public class Subject {
     int age;
     int contactListSize;
     String name;
+    String location;
     String[] names = {"James", "Mary", "Michael", "Patricia", "Robert", "Jennifer", "John", "Linda", "David", "Elizabeth",
             "William", "Barbara", "Richard", "Susan", "Joseph", "Jessica", "Thomas", "Karen", "Christopher",
             "Sarah", "Charles", "Lisa", "Daniel", "Nancy", "Matthew", "Sandra", "Anthony", "Betty", "Mark",
@@ -35,6 +36,10 @@ public class Subject {
             "Avoid smoking.", "Don’t mix with medication.", "Listen to calming music.",
             "If severe, seek medical help!", "Get fresh air.", "Hydrate with coconut water.", "Avoid greasy foods.",
             "Give your body time to recover."};
+    String[] locations = {"123 Maple Street", "456 Oak Avenue", "789 Pine Road", "101 Birch Lane", "202 Cedar Drive", "303 Elm Court", "404 Spruce Way", "505 Willow Terrace", "606 Aspen Circle", "707 Redwood Boulevard",
+            "808 Chestnut Drive", "909 Sycamore Street", "111 Poplar Road", "222 Dogwood Lane", "333 Magnolia Court", "444 Cypress Way", "555 Alder Circle", "666 Juniper Drive", "777 Sequoia Street", "888 Hickory Avenue",
+            "999 Laurel Road", "112 Beech Lane", "223 Cottonwood Court", "334 Mulberry Way", "445 Hazel Terrace", "556 Fir Circle", "667 Larch Drive", "778 Mahogany Street", "889 Yew Avenue", "990 Tamarack Road",
+            "121 Holly Lane", "232 Bayberry Court", "343 Elderberry Way", "454 Bluebell Terrace", "565 Buttercup Circle", "676 Clover Drive", "787 Dandelion Street", "898 Foxglove Avenue", "909 Gardenia Road", "1010 Ivy Lane"};
     String[] contactList; //each person's emergency contact list
     public Subject(String n, int a, int  c) {
         name = n;
@@ -42,6 +47,18 @@ public class Subject {
         contactListSize = c;
         contactList = new String[contactListSize];
         addContacts();
+        addLocation();
+    }
+
+    public void addLocation() {
+        Random random = new Random();
+        int index = random.nextInt(39);
+        location = locations[index];
+    }
+
+    public void printLocation() {
+        System.out.println(Constants.colorConstants.BRIGHT_YELLOW + name + "'s address is: " + location);
+        System.out.println("Go help them out!" + Constants.colorConstants.RESET);
     }
     public boolean isInArray(String value, int index) {
         for (int i = 0; i < index; i++) {

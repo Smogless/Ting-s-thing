@@ -12,6 +12,7 @@ public class GenerateSubjects {
             "Griffin", "Celeste", "Hector", "Charlotte", "Holden", "Claire", "Hugo", "Colette", "Ivan", "Delilah",
             "Jaxon", "Elise", "Joaquin", "Eliza", "Jonas", "Esme", "Julian", "Estelle", "Kai", "Evelyn",
             "Kian", "Flora", "Kingston", "Freya", "Leon", "Genevieve", "Levi", "Giselle", "Luca", "Hazel"};
+
     public GenerateSubjects(int sNum) {
         Random random = new Random();
         subjectNumber = sNum;

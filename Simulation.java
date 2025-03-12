@@ -31,6 +31,7 @@ public class Simulation {
                     if (BAC >= Constants.logicConstants.legalBACLimit) {
                         System.out.println();
                         System.out.println(Constants.colorConstants.RED + sub.name + "'s BAC of " + Constants.colorConstants.BLUE + BAC  + "%" + Constants.colorConstants.RED + " is above the legal limit! CALLING EMERGENCY CONTACTS" + Constants.colorConstants.RESET);
+                        sub.printLocation();
                         if (BAC >= Constants.logicConstants.extremelyHighBAC) {
                             sub.printHelpfulTips();
                         }
